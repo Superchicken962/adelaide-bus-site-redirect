@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting you...</title>
+    <style>
+        body {
+            background-color: rgb(30,30,30);
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        .info_box {
+            display: none;
+            margin: auto;
+            width: fit-content;
+        }
+        a:any-link {
+            color: rgb(255, 172, 17);
+        }
+        a:any-link:hover {
+            color: rgb(192, 125, 1);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="info_box">
+        <h1>You are being redirected...</h1>
+        <p>Didn't get redirected? Click <a href="https://adelaidebustracker.com/">here</a>.</p>
+    </div>
+</body>
+<script>
+  // Redirect to new domain, keeping the same path name.
+  window.location.href = `https://adelaidebustracker.com${window.location.pathname}`;
+</script>
+</html>
