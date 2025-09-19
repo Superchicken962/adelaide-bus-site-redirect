@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting you...</title>
+    <title>Attention!</title>
     <style>
         body {
             background-color: rgb(30,30,30);
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif !important;
             color: white;
         }
         .info_box {
-            display: none;
+            display: block;
             margin: auto;
             width: fit-content;
         }
+		.redirect {
+			display: none;
+		}
         a:any-link {
             color: rgb(255, 172, 17);
         }
@@ -22,16 +25,40 @@
             color: rgb(192, 125, 1);
             cursor: pointer;
         }
+		
+		.warning {
+			display: block;
+			background-color: rgba(252, 236, 3, 0.3);
+			padding: 4px 16px;
+			border: 2px solid rgb(252, 236, 3);
+			color: rgb(255, 242, 48);
+		}
     </style>
 </head>
 <body>
     <div class="info_box">
-        <h1>You are being redirected...</h1>
-        <p>Didn't get redirected? Click <a href="https://adelaidebustracker.com/">here</a>.</p>
+		<div class="warning">
+			<h3>Attention!</h3>
+			<p>
+				In the near future, this page will no longer serve as a redirection portal to <a href="https://adelaidebustracker.com/">adelaidebustracker.com</a><br>
+				If you are still using it as such, please consider instead going there directly!
+				
+				<br><br>
+				You will be redirected shortly
+			</p>
+		</div>
+	
+		<div class="redirect">
+			<h1>You are being redirected...</h1>
+			<p>Didn't get redirected? Click <a href="https://adelaidebustracker.com/">here</a>.</p>
+		</div>
     </div>
 </body>
 <script>
-  // Redirect to new domain, keeping the same path name.
-  window.location.href = `https://adelaidebustracker.com${window.location.pathname}${window.location.search}`;
+    // If the redirect does not happen, add the info block.
+    setTimeout(() => {
+        // Redirect to new domain, keeping the same path name.
+		window.location.href = `https://adelaidebustracker.com${window.location.pathname}${window.location.search}`;
+    }, 8200);
 </script>
 </html>
